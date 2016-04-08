@@ -40,7 +40,7 @@ class Position():
         self.product_currency = setupparams['product_currency']
 
 
-if __name__ == '__main__':
+
     
 
         

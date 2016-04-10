@@ -40,8 +40,10 @@ class Portfolio:
                        'product_type',
                        'product_quantity',
                        'product_price',
+                       'marketValue',
                        'product_cost',
-                       'product_currency']
+                       'product_currency',
+                       'product_mult']
 
         
         if fields != []:
@@ -68,7 +70,7 @@ class Portfolio:
         
         if export=='y':
             csvfilename = str(self.portfolio_name) + ".csv"
-            with open(csvfilename,'w') as csvfile:
+            with open(csvfilename,'w',newline='') as csvfile:
                 csvwriter = csv.DictWriter(csvfile,header_list,extrasaction='ignore')
                 csvwriter.writeheader()
                 for positions in self.position_list:

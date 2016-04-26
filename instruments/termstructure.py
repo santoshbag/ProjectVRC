@@ -11,6 +11,7 @@ Created on Sat Apr  23 11:29:41 2016
 
 import QuantLib as ql,csv,xlrd
 import math
+import matplotlib as plt
 from datetime import *
 
 
@@ -93,11 +94,11 @@ if __name__ == '__main__':
     vrcTermStructure = ZerorateTermStructure(cdate)
     vrcTermStructure.buildZeroCurves()
 
-    curve = vrcTermStructure.zeroCurveObjects['USD'][0]
-
-    for dates in curve.dates():
-        print(dates)
-
+    curve = vrcTermStructure.zeroCurveObjects['USD'][0][0]
+    
+    for date in curve.dates():
+        print(date,curve.discount(date),"\n" )
+        
 
 
 
